@@ -1,0 +1,444 @@
+@font-face {
+  font-family: cinzel;
+  src: url("../fonts/Cinzel-Regular.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: cinzel-bold;
+  src: url("../fonts/Cinzel-Bold.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: cinzel-decor-bold;
+  src: url("../fonts/CinzelDecorative-Bold.otf");
+}
+
+/*UNIVERSAL ELEMENTS:*/
+html {
+  min-height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  max-width: 100%;
+  font-size: 1em;
+}
+
+body:after {
+  content: "";
+  position: fixed;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: url(../media/d60wuxp-ed66ba52-919b-4b25-a527-3561d37cb940.jpg) center center;
+  background-size: cover;
+}
+
+header {
+  background-color: #272727;
+}
+
+h1 {
+  font-family: cinzel;
+  font-size: 1.3em;
+  color: white;
+  text-align: center;
+  padding-top: 1.5%;
+  padding-bottom: 3%;
+  margin-bottom: 0%;
+}
+
+.h1-initial {
+  font-size: 2em;
+}
+
+h3 {
+  border-top: 2px solid #FF8900;
+  color: #FF8900;
+  text-align: center;
+  font-family: cinzel-decor-bold;
+  width: 80%;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 15%;
+  padding-top: 5%;
+}
+
+.controller-box {
+  float: left;
+  display: block;
+  width: 15%;
+  background-color: black;
+  height: 100%;
+  border: 2px solid #FF8900;
+  margin-right: 1%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav a {
+  font-family: cinzel-bold;
+  text-align: center;
+  display: block;
+  color: white;
+  list-style: none;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: #1A425C;
+  padding: 16px;
+  border-radius: 25px;
+}
+
+.active {
+  background-color: #80181B;
+  text-decoration: underline;
+}
+
+p {
+  color: white;
+  margin-left: 17%;
+  width: 75%;
+}
+
+.playercards {
+  float: left;
+  width: 180px;
+  margin: 1%;
+  margin-right: auto;
+  background-color: black;
+  height: 300px;
+  border: 2px solid #FF8900;
+  border-radius: 16px;
+}
+
+/*CHARACTER SELECTION*/
+#characters {
+  width: 90%;
+  margin: auto;
+}
+
+.character-button {
+  display: block;
+  color: white;
+  background-color: #FF8900;
+  text-align: center;
+  width: 130px;
+  margin: auto;
+  margin-top: 5%;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+/*BOARD GAME*/
+/*.cardbox {
+    float: left;
+    width: 30%;
+    margin-top: 5%;
+}*/
+.board {
+  display: -ms-grid;
+  display: grid;
+  margin-left: 5%;
+  margin-top: -5%;
+  -ms-grid-columns: (8.5vw)[10];
+      grid-template-columns: repeat(10, 8.5vw);
+  -ms-grid-rows: (10.8vh)[10];
+      grid-template-rows: repeat(10, 10.8vh);
+  width: 50%;
+}
+
+.tile {
+  background: lightgray;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tile-trap_horizontal {
+  width: 95%;
+  height: auto;
+}
+
+.tile-trap_vertical {
+  height: 95%;
+  width: auto;
+}
+
+.tile-trap_face {
+  width: 49%;
+}
+
+.marble {
+  background: url(../media/marble-8.png) center center;
+  background-size: cover;
+}
+
+.darkmarble {
+  background: url(../media/dark-marble-8.png) center center;
+  background-size: cover;
+}
+
+.tile-nightking {
+  background: black;
+}
+
+.tile:nth-child(1) {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.tile:nth-child(2) {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+.tile:nth-child(3) {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+.tile:nth-child(4) {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 4;
+  grid-column: 4;
+}
+
+.tile:nth-child(5) {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 5;
+  grid-column: 5;
+}
+
+.tile:nth-child(6) {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 6;
+  grid-column: 6;
+}
+
+.tile:nth-child(7) {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 7;
+  grid-column: 7;
+}
+
+.tile:nth-child(8) {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 8;
+  grid-column: 8;
+}
+
+.tile:nth-child(9) {
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 8;
+  grid-column: 8;
+}
+
+.tile:nth-child(10) {
+  -ms-grid-row: 4;
+  grid-row: 4;
+  -ms-grid-column: 8;
+  grid-column: 8;
+}
+
+.tile:nth-child(11) {
+  -ms-grid-row: 5;
+  grid-row: 5;
+  -ms-grid-column: 8;
+  grid-column: 8;
+}
+
+.tile:nth-child(12) {
+  -ms-grid-row: 6;
+  grid-row: 6;
+  -ms-grid-column: 8;
+  grid-column: 8;
+}
+
+.tile:nth-child(13) {
+  -ms-grid-row: 7;
+  grid-row: 7;
+  -ms-grid-column: 8;
+  grid-column: 8;
+}
+
+.tile:nth-child(14) {
+  -ms-grid-row: 8;
+  grid-row: 8;
+  -ms-grid-column: 8;
+  grid-column: 8;
+}
+
+.tile:nth-child(15) {
+  -ms-grid-row: 9;
+  grid-row: 9;
+  -ms-grid-column: 8;
+  grid-column: 8;
+}
+
+.tile:nth-child(16) {
+  -ms-grid-row: 10;
+  grid-row: 10;
+  -ms-grid-column: 8;
+  grid-column: 8;
+}
+
+.tile:nth-child(17) {
+  -ms-grid-row: 10;
+  grid-row: 10;
+  -ms-grid-column: 7;
+  grid-column: 7;
+}
+
+.tile:nth-child(18) {
+  -ms-grid-row: 10;
+  grid-row: 10;
+  -ms-grid-column: 6;
+  grid-column: 6;
+}
+
+.tile:nth-child(19) {
+  -ms-grid-row: 10;
+  grid-row: 10;
+  -ms-grid-column: 5;
+  grid-column: 5;
+}
+
+.tile:nth-child(20) {
+  -ms-grid-row: 10;
+  grid-row: 10;
+  -ms-grid-column: 4;
+  grid-column: 4;
+}
+
+.tile:nth-child(21) {
+  -ms-grid-row: 10;
+  grid-row: 10;
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+.tile:nth-child(22) {
+  -ms-grid-row: 10;
+  grid-row: 10;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+.tile:nth-child(23) {
+  -ms-grid-row: 10;
+  grid-row: 10;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.tile:nth-child(24) {
+  -ms-grid-row: 9;
+  grid-row: 9;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.tile:nth-child(25) {
+  -ms-grid-row: 8;
+  grid-row: 8;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.tile:nth-child(26) {
+  -ms-grid-row: 7;
+  grid-row: 7;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.tile:nth-child(27) {
+  -ms-grid-row: 6;
+  grid-row: 6;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.tile:nth-child(28) {
+  -ms-grid-row: 5;
+  grid-row: 5;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.tile:nth-child(29) {
+  -ms-grid-row: 4;
+  grid-row: 4;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.tile:nth-child(30) {
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 1300px) {
+  #characters {
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 3%;
+  }
+  .playercards {
+    margin: 2%;
+  }
+  .character-selection-page .controller-box {
+    float: none;
+    width: 100%;
+    height: 30%;
+  }
+  .character-selection-page h3 {
+    margin-top: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  .character-selection-page nav a {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
