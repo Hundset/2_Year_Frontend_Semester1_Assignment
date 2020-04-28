@@ -21,6 +21,7 @@
 html {
     min-height: 100%;
     box-sizing: border-box;
+    color: white;
 }
 
 body {
@@ -139,10 +140,19 @@ p {
     color: white;
     background-color: #FF8900;
     text-align: center;
-    width: 130px;
+    width: 140px;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 8%;
     padding: 16px;
+    border: 0;
+    border-radius: 16px;
+}
+
+.playercards img {
+    height: 220px;
+    width: 160px;
+    margin-top: 5%;
+    margin-left: 5%;
     border-radius: 16px;
 }
 
