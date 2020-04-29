@@ -1,23 +1,24 @@
 
 var request = new XMLHttpRequest();
 
+var playerTurn = 1;
+
 request.onreadystatechange = function() {
     if (request.readyState === 4 && request.status === 200) {
         object = JSON.parse(this.responseText);
 
-        var Jon = object[583].Name
-        var Tyrion = object[1051].Name
-        var Arya = object[147].Name
-        var Dany = object[270].Name
-        var Jaime = object[528].Name
-        var Brienne = object[215].Name 
-        var Hound = object[954].Name
-        var Worm = object[1444].Name
-        var Melisa = object[742].Name
-        var Varys = object[2064].Name
+        var Jon = object[583].Name;
+        var Tyrion = object[1051].Name;
+        var Arya = object[147].Name;
+        var Dany = object[270].Name;
+        var Jaime = object[528].Name;
+        var Brienne = object[215].Name; 
+        var Hound = object[954].Name;
+        var Worm = object[1444].Name;
+        var Melisa = object[742].Name;
+        var Varys = object[2064].Name;
         
         var characters = [Jon, Tyrion, Dany, Arya, Jaime, Brienne, Hound, Worm, Melisa, Varys]
-
 
         var jonImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Jon.png"
         var tyrionImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Tyrion.png"
@@ -43,7 +44,7 @@ request.onreadystatechange = function() {
 
                 var charName = document.createElement('button')
                 charName.setAttribute("class", "character-button")
-                charName.setAttribute("id", "select_" + char)
+                charName.setAttribute("data-name", char)
 
                 charName.innerHTML = char;
 
@@ -86,23 +87,81 @@ request.onreadystatechange = function() {
                     }
 
             }
+
+            const buttons = document.querySelectorAll(".character-button");
+            
+            buttons.forEach(button => {
+                button.addEventListener("click", function(event) {
+                    console.log("name", event.target.attributes.getNamedItem('data-name').value)
+                    var name = event.target.attributes.getNamedItem('data-name').value;
+
+                    if(playerTurn === 1) {
+                        localStorage.setItem("player1", name);
+                        playerTurn = 2;
+                    }
+                    else {
+                        localStorage.setItem("player2", name);
+                        playerTurn = 1;
+                    }
+                })
+            })
+
         }
         createChars();
 
-            document.getElementById("select_Jon Stark").addEventListener("click", function() {
+        document.getElementById("selected-char1").innerHTML = localStorage.getItem('player1');
+        document.getElementById("selected-char2").innerHTML = localStorage.getItem('player2');
+
+        //My original code, pre-help:
+        /*document.getElementById("select_Jon Stark").addEventListener("click", function() {
+                
+            if (window.localStorage.length === 0) {
+
                 const Jon = {
-                    name: "Jon Snow"
+                    name: "Jon Stark"
                 }
 
                 window.localStorage.setItem('player1', JSON.stringify(Jon));
-                    console.log("Success")
+                    console.log("Chosen player 1");
                     }
+                else if (window.localStorage.length === 1) {
+                        window.localStorage.setItem('player2', JSON.stringify(Jon));
+                        console.log("Chosen player 2");
+                    }
+                    else if (window.localStorage.length === 2) {
+                        window.localStorage.removeItem('player1')
+                        window.localStorage.removeItem('player2')
+                        window.localStorage.setItem('player1', JSON.stringify(Jon));
+                        console.log("Chosen player 1");
+                    }
+                }
             );
+        
+        document.getElementById("select_Tyrion Lannister").addEventListener("click", function() {
+                
+            if (window.localStorage.length === 0) {
 
-        /*var playerContainer = document.getElementsByClassName("selected-char1");
-        var player1 = localStorage.getItem('player1');
+                const Tyrion = {
+                    name: "Tyrion Lannister"
+                }
 
-        playerContainer.appendChild(player1)*/
+                window.localStorage.setItem('player1', JSON.stringify(Tyrion));
+                    console.log("Chosen player 1");
+                    }   
+
+                else if (window.localStorage.length === 1) {
+                        window.localStorage.setItem('player2', JSON.stringify(Tyrion));
+                        console.log("Chosen player 2");
+                    }
+
+                    else if (window.localStorage.length === 2) {
+                        window.localStorage.removeItem('player1')
+                        window.localStorage.removeItem('player2')
+                        window.localStorage.setItem('player1', JSON.stringify(Tyrion));
+                        console.log("Chosen player 1");
+                    }
+                }
+            );*/
     }  
 };
 

@@ -1,4 +1,12 @@
 
+
+$primary-color: #1A425C;
+$secondary-color: #80181B;
+$highlight-color: #FF8900;
+$font-color: white;
+$container-color: black;
+
+
 @font-face {
     font-family: cinzel;
     src: url('../fonts/Cinzel-Regular.otf');
@@ -21,7 +29,7 @@
 html {
     min-height: 100%;
     box-sizing: border-box;
-    color: white;
+    color: $font-color
 }
 
 body {
@@ -62,8 +70,8 @@ h1 {
 }
 
 h3 {
-    border-top: 2px solid #FF8900; 
-    color: #FF8900;
+    border-top: 2px solid $highlight-color; 
+    color: $highlight-color;
     text-align: center;
     font-family: cinzel-decor-bold;
     width: 80%;
@@ -77,9 +85,9 @@ h3 {
     float: left;
     display: block;
     width: 15%;
-    background-color: black;
+    background-color: $container-color;
     height: 100%;
-    border: 2px solid #FF8900;
+    border: 2px solid $highlight-color;
     margin-right: 1%;
 }
 
@@ -94,25 +102,24 @@ a:hover {
 nav a {
     font-family: cinzel-bold;
     text-align: center;
+    color: $font-color;
     display: block;
-    color: white;
     list-style: none;
     margin-top: 10%;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: #1A425C;
+    background-color: $primary-color;
     padding: 16px;
     border-radius: 25px;
 }
     
 .active {
-    background-color: #80181B;
+    background-color: $secondary-color;
     text-decoration: underline;
 }
 
 
 p {
-    color: white;
     margin-left: 17%;
     width: 75%;
 }
@@ -122,9 +129,9 @@ p {
     width: 180px;
     margin: 1%;
     margin-right: auto;
-    background-color: black;
+    background-color: $container-color;
     height: 300px;
-    border: 2px solid #FF8900;
+    border: 2px solid $highlight-color;
     border-radius: 16px;
 }
 
@@ -138,7 +145,7 @@ p {
 .character-button {
     display: block;
     color: white;
-    background-color: #FF8900;
+    background-color: $highlight-color;
     text-align: center;
     width: 140px;
     margin: auto;
@@ -146,6 +153,11 @@ p {
     padding: 16px;
     border: 0;
     border-radius: 16px;
+}
+
+.character-button:hover {
+    color: $highlight-color;
+    background-color: white;
 }
 
 .playercards img {
@@ -158,18 +170,11 @@ p {
 
 /*BOARD GAME*/
 
-
-/*.cardbox {
-    float: left;
-    width: 30%;
-    margin-top: 5%;
-}*/
-
 .board {
     display: grid;
     margin-left: 5%;
     margin-top: -5%;
-    grid-template-columns: repeat(10,8.5vw);
+    grid-template-columns: repeat(8,8.5vw);
     grid-template-rows: repeat(10,10.8vh);
     width: 50%;
 }

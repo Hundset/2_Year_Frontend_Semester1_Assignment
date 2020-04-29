@@ -93,8 +93,8 @@ a:hover {
 nav a {
   font-family: cinzel-bold;
   text-align: center;
-  display: block;
   color: white;
+  display: block;
   list-style: none;
   margin-top: 10%;
   margin-left: 10%;
@@ -110,7 +110,6 @@ nav a {
 }
 
 p {
-  color: white;
   margin-left: 17%;
   width: 75%;
 }
@@ -145,6 +144,11 @@ p {
   border-radius: 16px;
 }
 
+.character-button:hover {
+  color: #FF8900;
+  background-color: white;
+}
+
 .playercards img {
   height: 220px;
   width: 160px;
@@ -154,18 +158,13 @@ p {
 }
 
 /*BOARD GAME*/
-/*.cardbox {
-    float: left;
-    width: 30%;
-    margin-top: 5%;
-}*/
 .board {
   display: -ms-grid;
   display: grid;
   margin-left: 5%;
   margin-top: -5%;
-  -ms-grid-columns: (8.5vw)[10];
-      grid-template-columns: repeat(10, 8.5vw);
+  -ms-grid-columns: (8.5vw)[8];
+      grid-template-columns: repeat(8, 8.5vw);
   -ms-grid-rows: (10.8vh)[10];
       grid-template-rows: repeat(10, 10.8vh);
   width: 50%;
