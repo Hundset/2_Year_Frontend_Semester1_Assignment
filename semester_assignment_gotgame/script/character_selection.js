@@ -98,19 +98,22 @@ request.onreadystatechange = function() {
                     if(playerTurn === 1) {
                         localStorage.setItem("player1", name);
                         playerTurn = 2;
+                        button.setAttribute("class", "clicked")
                     }
                     else {
                         localStorage.setItem("player2", name);
                         playerTurn = 1;
+                        button.setAttribute("class", "clicked")
+                        setTimeout(function() {location.reload();}, 250);
                     }
                 })
             })
-
         }
         createChars();
 
         document.getElementById("selected-char1").innerHTML = localStorage.getItem('player1');
         document.getElementById("selected-char2").innerHTML = localStorage.getItem('player2');
+
 
         //My original code, pre-help:
         /*document.getElementById("select_Jon Stark").addEventListener("click", function() {
