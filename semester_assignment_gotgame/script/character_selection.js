@@ -85,7 +85,6 @@ request.onreadystatechange = function() {
                     if (char === characters[9]) {
                         profileImg.setAttribute("src", varysImg);  
                     }
-
             }
 
             const buttons = document.querySelectorAll(".character-button");
@@ -113,58 +112,7 @@ request.onreadystatechange = function() {
 
         document.getElementById("selected-char1").innerHTML = localStorage.getItem('player1');
         document.getElementById("selected-char2").innerHTML = localStorage.getItem('player2');
-
-
-        //My original code, pre-help:
-        /*document.getElementById("select_Jon Stark").addEventListener("click", function() {
-                
-            if (window.localStorage.length === 0) {
-
-                const Jon = {
-                    name: "Jon Stark"
-                }
-
-                window.localStorage.setItem('player1', JSON.stringify(Jon));
-                    console.log("Chosen player 1");
-                    }
-                else if (window.localStorage.length === 1) {
-                        window.localStorage.setItem('player2', JSON.stringify(Jon));
-                        console.log("Chosen player 2");
-                    }
-                    else if (window.localStorage.length === 2) {
-                        window.localStorage.removeItem('player1')
-                        window.localStorage.removeItem('player2')
-                        window.localStorage.setItem('player1', JSON.stringify(Jon));
-                        console.log("Chosen player 1");
-                    }
-                }
-            );
         
-        document.getElementById("select_Tyrion Lannister").addEventListener("click", function() {
-                
-            if (window.localStorage.length === 0) {
-
-                const Tyrion = {
-                    name: "Tyrion Lannister"
-                }
-
-                window.localStorage.setItem('player1', JSON.stringify(Tyrion));
-                    console.log("Chosen player 1");
-                    }   
-
-                else if (window.localStorage.length === 1) {
-                        window.localStorage.setItem('player2', JSON.stringify(Tyrion));
-                        console.log("Chosen player 2");
-                    }
-
-                    else if (window.localStorage.length === 2) {
-                        window.localStorage.removeItem('player1')
-                        window.localStorage.removeItem('player2')
-                        window.localStorage.setItem('player1', JSON.stringify(Tyrion));
-                        console.log("Chosen player 1");
-                    }
-                }
-            );*/
     }  
 };
 
