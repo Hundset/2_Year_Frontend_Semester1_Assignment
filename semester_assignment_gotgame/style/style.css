@@ -78,7 +78,7 @@ h3, h5 {
 h3 {
   border-top: 2px solid #FF8900;
   margin-top: 10%;
-  margin-bottom: 15%;
+  margin-bottom: 10%;
   padding-top: 5%;
 }
 
@@ -133,7 +133,7 @@ p {
 }
 
 #selected-char1, #selected-char2 {
-  width: 90%;
+  width: 98%;
   margin: auto;
   padding: 2%;
   text-align: center;
@@ -194,16 +194,23 @@ p {
 }
 
 /*BOARD GAME*/
-#trap-alert {
+#trap-alert, #roll-alert {
   padding: 5%;
-  width: 90%;
+  width: 98%;
   margin: auto;
+}
+
+.score-span {
+  color: #FF8900;
+}
+
+#trap-alert {
   color: red;
 }
 
 #dice {
   margin: auto;
-  margin-top: 20%;
+  margin-top: 5%;
   display: block;
   width: 80px;
   height: 80px;
