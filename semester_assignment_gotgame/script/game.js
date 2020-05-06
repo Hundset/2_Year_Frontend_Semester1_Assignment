@@ -12,19 +12,6 @@ var Varys = "Varys";
 
 var characters = [Jon, Tyrion, Dany, Arya, Jaime, Brienne, Hound, Worm, Melisa, Varys]
 
-var jonToken = "http://www.hundsie.com/semester_assignment_gotgame/media/jon-token-8.png";
-var tyrionToken = "http://www.hundsie.com/semester_assignment_gotgame/media/tyrion-token-8.png";
-var aryaToken = "http://www.hundsie.com/semester_assignment_gotgame/media/jon-token-8.png";
-var danyToken = "http://www.hundsie.com/semester_assignment_gotgame/media/tyrion-token-8.png";
-var jaimeToken = "http://www.hundsie.com/semester_assignment_gotgame/media/jon-token-8.png";
-var brienneToken = "http://www.hundsie.com/semester_assignment_gotgame/media/tyrion-token-8.png";
-var houndToken = "http://www.hundsie.com/semester_assignment_gotgame/media/jon-token-8.png";
-var wormToken = "http://www.hundsie.com/semester_assignment_gotgame/media/tyrion-token-8.png";
-var melisaToken = "http://www.hundsie.com/semester_assignment_gotgame/media/jon-token-8.png";
-var varysToken = "http://www.hundsie.com/semester_assignment_gotgame/media/tyrion-token-8.png";
-
-var charImgs = [jonToken, tyrionToken, aryaToken, danyToken, jaimeToken, brienneToken, houndToken, wormToken, melisaToken, varysToken]
-
 var selected1 = document.getElementById("selected-char1");
 var selected2 = document.getElementById("selected-char2");
 
@@ -55,7 +42,7 @@ var trapAlert = document.getElementById("trap-alert");
         var token1 = document.createElement('div')
         token1.setAttribute("class", "token")
         token1.setAttribute("id", "token1")
-        token1.innerHTML = "P1";
+        token1.innerHTML = "1P";
         position1.appendChild(token1);
 
     }
@@ -65,20 +52,51 @@ var trapAlert = document.getElementById("trap-alert");
         var token2 = document.createElement('div')
         token2.setAttribute("class", "token")
         token2.setAttribute("id", "token2")
-        token2.innerHTML = "P2";
+        token2.innerHTML = "2P";
         position2.appendChild(token2);
 
     }
-
+    
 
 function rollDice() {
 
+    function changeDice() {
+
+        switch (roll) {
+        case 1 :
+            dice.setAttribute("src", "http://www.hundsie.com/semester_assignment_gotgame/media/dice-1.png");
+            break;
+        case 2 :
+            dice.setAttribute("src", "http://www.hundsie.com/semester_assignment_gotgame/media/dice-2.png");
+            break;
+        case 3 :
+            dice.setAttribute("src", "http://www.hundsie.com/semester_assignment_gotgame/media/dice-3.png");
+            break;
+        case 4 :
+            dice.setAttribute("src", "http://www.hundsie.com/semester_assignment_gotgame/media/dice-4.png");
+            break;
+        case 5 :
+            dice.setAttribute("src", "http://www.hundsie.com/semester_assignment_gotgame/media/dice-5.png");
+            break;
+        case 6 :
+            dice.setAttribute("src", "http://www.hundsie.com/semester_assignment_gotgame/media/dice-6.png");
+            break;
+        }
+    }
 
     if(playerTurn === 1) {
-        
-        playerTurn = 2;
 
         var roll = Math.floor( Math.random() * 6 ) +1;
+
+        if (roll === 6) {
+            playerTurn = 1;
+            rollAlert.innerHTML = player1 + " rolled " + roll + ". You get another turn!";
+
+        } else {
+            playerTurn = 2;
+        }
+
+        changeDice();
 
         console.log("Player 1 rolled " + roll);
 
@@ -163,7 +181,7 @@ function rollDice() {
         case 15:
 
             if (player1 === Jon || player1 === Arya) {
-                trapAlert.innerHTML = "You chance upon one of your family's Direwolves - to your sorrow, they have been turned by the white walkers and no longer recognize you as their kin - you are forced to fight, or to flee (you go back 2 moves";
+                trapAlert.innerHTML = "You chance upon one of your family's Direwolves - to your sorrow, they have been turned by the white walkers and no longer recognize you as their kin - you are forced to fight, or to flee (you go back 2 moves)";
             } else {
                 trapAlert.innerHTML = "You have crossed the Stark family, one of their ferocious Direwolves leap to their defense (you go back 2 moves)";
             }
@@ -179,7 +197,7 @@ function rollDice() {
         case 20:
 
             if (player1 === Jaime || player1 === Tyrion) {
-                trapAlert.innerHTML = "Cersei will no longer risk competition for the Iron Throne, not even from her closest kin, and the Mountain is set upon you, you must retreat! (you go back 2 moves"
+                trapAlert.innerHTML = "Cersei will no longer risk competition for the Iron Throne, not even from her closest kin, and the Mountain is set upon you, you must retreat! (you go back 2 moves)"
             }
             else {
 
@@ -209,7 +227,7 @@ function rollDice() {
             }
             else {
                 
-                trapAlert.innerHTML = "The sole remaining heir of house Targaryen, the mother of Dragons, recognizes you as too great a risk to her aspirations for the throne. One of her dragons descend upon you. You stand no chance, flee! (you go back 3 moves)";
+                trapAlert.innerHTML = "Daenerys - the sole heir of house Targaryen - recognizes you as a threat to her aspirations for the throne. Her dragons descend upon you, flee! (you go back 3 moves)";
             }
     
             score1 = 22;
@@ -257,6 +275,14 @@ function rollDice() {
         playerTurn = 1;
 
         var roll = Math.floor( Math.random() * 6 ) +1;
+
+        if (roll === 6) {
+            playerTurn = 2;
+        } else {
+            playerTurn = 1;
+        }
+
+        changeDice();
 
         console.log("Player 2 rolled " + roll);
 
@@ -327,7 +353,7 @@ function rollDice() {
                 
             case 10:
 
-                trapAlert.innerHTML = "You are assaulted by a Thenn ambush, you retreat to recover (you go back 1 move)"
+                trapAlert.innerHTML = "You are assaulted by a Thenn ambush, you retreat to recover (you go back 1 move)";
         
                 score2 = 9;
     
@@ -340,9 +366,9 @@ function rollDice() {
             case 15:
     
                 if (player2 === Jon || player2 === Arya) {
-                    trapAlert.innerHTML = "You chance upon one of your family's Direwolves - to your sorrow, they have been turned by the white walkers and no longer recognize you as their kin - you are forced to fight, or to flee (you go back 2 moves)"
+                    trapAlert.innerHTML = "You chance upon one of your family's Direwolves - to your sorrow, they have been turned by the white walkers and no longer recognize you as their kin - you are forced to fight, or to flee (you go back 2 moves)";
                 } else {
-                    trapAlert.innerHTML = "You have crossed the Stark family, one of their ferocious Direwolves leap to their defense (you go back 2 moves)"
+                    trapAlert.innerHTML = "You have crossed the Stark family, one of their ferocious Direwolves leap to their defense (you go back 2 moves)";
                 }
         
                 score2 = 13;
@@ -356,11 +382,11 @@ function rollDice() {
             case 20:
     
                 if (player2 === Jaime || player2 === Tyrion) {
-                    trapAlert.innerHTML = "Cersei will no longer risk competition for the Iron Throne, not even from her closest kin, and the Mountain is set upon you, you must retreat! (you go back 2 moves";
+                    trapAlert.innerHTML = "Cersei will no longer risk competition for the Iron Throne, not even from her closest kin, and the Mountain is set upon you, you must retreat! (you go back 2 moves)";
                 }
                 else {
     
-                    trapAlert.innerHTML = "You have become an obstacle to House Lannister and they have set the Mountain upon you, you must retreat! (you go back 2 moves)"
+                    trapAlert.innerHTML = "You have become an obstacle to House Lannister and they have set the Mountain upon you, you must retreat! (you go back 2 moves)";
     
                 }
         
@@ -376,17 +402,17 @@ function rollDice() {
     
                 if (player2 === Dany) {
     
-                    trapAlert.innerHTML = "You have lost control of one of your dragons! Its sibling lunges to your defense; remaining loyal to you. You are forced to retreat in order to escape the resulting onslaught (you go back 3 moves)"
+                    trapAlert.innerHTML = "You have lost control of one of your dragons! Its sibling lunges to your defense; remaining loyal to you. You are forced to retreat in order to escape the resulting onslaught (you go back 3 moves)";
     
                 }
                 else if (player2 === Worm) {
 
-                    trapAlert.innerHTML = "Daenerys has lost control of one of her dragons! You resolve to help her flee - escorting your liberator away from harm (you go back 3 moves)"
+                    trapAlert.innerHTML = "Daenerys has lost control of one of her dragons! You resolve to help her flee - escorting your liberator away from harm (you go back 3 moves)";
 
                 }
                 else {
                     
-                    trapAlert.innerHTML = "The sole remaining heir of house Targaryen, the mother of Dragons, recognizes you as too great a risk to her aspirations for the throne. One of her dragons descend upon you. You stand no chance, flee! (you go back 3 moves)";
+                    trapAlert.innerHTML = "Daenerys - the sole heir of house Targaryen - recognizes you as a threat to her aspirations for the throne. Her dragons descend upon you, flee! (you go back 3 moves)";
                 }
         
                 score2 = 22;
@@ -399,7 +425,7 @@ function rollDice() {
     
             case 30:
     
-                trapAlert.innerHTML = "You stand before the Night King. Facing a white Walker is perilous enough on its own, you stand no chance against his undead army. Flee, or face certain (un)death (you go back 4 moves)"
+                trapAlert.innerHTML = "You stand before the Night King. Facing a white Walker is perilous enough on its own, you stand no chance against his undead army. Flee, or face certain (un)death (you go back 4 moves)";
     
                 score2 = 26
     
@@ -427,7 +453,5 @@ function rollDice() {
                     console.log("You win!")
         
                 }
+        }
     }
-
-}
-
