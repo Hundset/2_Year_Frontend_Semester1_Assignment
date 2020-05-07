@@ -5,7 +5,7 @@ var Arya = "Arya Stark";
 var Dany = "Daenerys Targaryen";
 var Jaime = "Jaime Lannister";
 var Brienne = "Brienne of Tarth" ;
-var Hound = "Sandor Clegange";
+var Hound = "Sandor Clegane";
 var Worm = "Grey Worm";
 var Melisa = "Melisandre";
 var Varys = "Varys";
@@ -37,7 +37,7 @@ var rollAlert = document.getElementById("roll-alert");
 var trapAlert = document.getElementById("trap-alert");
 
 
-    if (localStorage.length === 2) {
+    if (localStorage.length = 2 || 3) {
 
         var token1 = document.createElement('div')
         token1.setAttribute("class", "token")
@@ -47,7 +47,7 @@ var trapAlert = document.getElementById("trap-alert");
 
     }
 
-    if (localStorage.length === 2) {
+    if (localStorage.length = 2 || 3) {
 
         var token2 = document.createElement('div')
         token2.setAttribute("class", "token")
@@ -90,7 +90,6 @@ function rollDice() {
 
         if (roll === 6) {
             playerTurn = 1;
-            rollAlert.innerHTML = player1 + " rolled " + roll + ". You get another turn!";
 
         } else {
             playerTurn = 2;
@@ -181,7 +180,7 @@ function rollDice() {
         case 15:
 
             if (player1 === Jon || player1 === Arya) {
-                trapAlert.innerHTML = "You chance upon one of your family's Direwolves - to your sorrow, they have been turned by the white walkers and no longer recognize you as their kin - you are forced to fight, or to flee (you go back 2 moves)";
+                trapAlert.innerHTML = "You chance upon one of your family's Direwolves - having been turned by white walkers; they no longer recognize you as their kin. You are forced to flee (you go back 2 moves)";
             } else {
                 trapAlert.innerHTML = "You have crossed the Stark family, one of their ferocious Direwolves leap to their defense (you go back 2 moves)";
             }
@@ -197,7 +196,7 @@ function rollDice() {
         case 20:
 
             if (player1 === Jaime || player1 === Tyrion) {
-                trapAlert.innerHTML = "Cersei will no longer risk competition for the Iron Throne, not even from her closest kin, and the Mountain is set upon you, you must retreat! (you go back 2 moves)"
+                trapAlert.innerHTML = "Cersei will no longer risk competition for the Iron Throne, not even from her closest kin. The Mountain is set upon you, flee! (you go back 2 moves)";
             }
             else {
 
@@ -217,7 +216,7 @@ function rollDice() {
 
             if (player1 === Dany) {
 
-                trapAlert.innerHTML = "You have lost control of one of your dragons! Its sibling lunges to your defense; remaining loyal to you. You are forced to retreat in order to escape the resulting onslaught (you go back 3 moves)";
+                trapAlert.innerHTML = "You have lost control of one of your dragons! You are forced to retreat, escaping the creature's wrath (you go back 3 moves)";
 
             }
             else if (player2 === Worm) {
@@ -227,7 +226,7 @@ function rollDice() {
             }
             else {
                 
-                trapAlert.innerHTML = "Daenerys - the sole heir of house Targaryen - recognizes you as a threat to her aspirations for the throne. Her dragons descend upon you, flee! (you go back 3 moves)";
+                trapAlert.innerHTML = "Daenerys recognizes you as a threat to her aspirations for the throne. Her dragons descend upon you, flee! (you go back 3 moves)";
             }
     
             score1 = 22;
@@ -240,7 +239,7 @@ function rollDice() {
 
         case 30:
 
-            trapAlert.innerHTML = "You stand before the Night King. Facing a white Walker is perilous enough on its own, you stand no chance against his undead army. Flee, or face certain (un)death (you go back 4 moves)";
+            trapAlert.innerHTML = "You stand before the Night King. You have no chance against his wight army. Flee or face certain (un)death (you go back 4 moves)";
 
             score1 = 26
 
@@ -255,6 +254,12 @@ function rollDice() {
             trapAlert.innerHTML = "";
             break;
             
+        }
+
+        if (score1 >= 31) {
+
+            localStorage.setItem("winner", player1);
+
         }
 
         if (player1Count >= 31) {
@@ -366,7 +371,7 @@ function rollDice() {
             case 15:
     
                 if (player2 === Jon || player2 === Arya) {
-                    trapAlert.innerHTML = "You chance upon one of your family's Direwolves - to your sorrow, they have been turned by the white walkers and no longer recognize you as their kin - you are forced to fight, or to flee (you go back 2 moves)";
+                    trapAlert.innerHTML = "You chance upon one of your family's Direwolves - having been turned by white walkers; they no longer recognize you as their kin. You are forced to flee (you go back 2 moves)";
                 } else {
                     trapAlert.innerHTML = "You have crossed the Stark family, one of their ferocious Direwolves leap to their defense (you go back 2 moves)";
                 }
@@ -382,7 +387,7 @@ function rollDice() {
             case 20:
     
                 if (player2 === Jaime || player2 === Tyrion) {
-                    trapAlert.innerHTML = "Cersei will no longer risk competition for the Iron Throne, not even from her closest kin, and the Mountain is set upon you, you must retreat! (you go back 2 moves)";
+                    trapAlert.innerHTML = "Cersei will no longer risk competition for the Iron Throne, not even from her closest kin. The Mountain is set upon you, flee! (you go back 2 moves)";
                 }
                 else {
     
@@ -402,7 +407,7 @@ function rollDice() {
     
                 if (player2 === Dany) {
     
-                    trapAlert.innerHTML = "You have lost control of one of your dragons! Its sibling lunges to your defense; remaining loyal to you. You are forced to retreat in order to escape the resulting onslaught (you go back 3 moves)";
+                    trapAlert.innerHTML = "You have lost control of one of your dragons! You are forced to retreat, escaping the creature's wrath (you go back 3 moves)";
     
                 }
                 else if (player2 === Worm) {
@@ -412,7 +417,8 @@ function rollDice() {
                 }
                 else {
                     
-                    trapAlert.innerHTML = "Daenerys - the sole heir of house Targaryen - recognizes you as a threat to her aspirations for the throne. Her dragons descend upon you, flee! (you go back 3 moves)";
+                    trapAlert.innerHTML = "Daenerys recognizes you as a threat to her aspirations for the throne. Her dragons descend upon you, flee! (you go back 3 moves)";
+
                 }
         
                 score2 = 22;
@@ -425,7 +431,8 @@ function rollDice() {
     
             case 30:
     
-                trapAlert.innerHTML = "You stand before the Night King. Facing a white Walker is perilous enough on its own, you stand no chance against his undead army. Flee, or face certain (un)death (you go back 4 moves)";
+                trapAlert.innerHTML = "You stand before the Night King. You have no chance against his wight army. Flee or face certain (un)death (you go back 4 moves)";
+
     
                 score2 = 26
     
@@ -439,6 +446,12 @@ function rollDice() {
                 
                     trapAlert.innerHTML = "";
                     break;
+                    
+                }
+
+                if (score2 >= 31) {
+
+                    localStorage.setItem("winner", player2);
                     
                 }
                 
