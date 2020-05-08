@@ -497,6 +497,7 @@ grid-column: 1;
 
 #winner-image {
 
+    display: inline-block;
     width: 180px;
     border: 2px solid $highlight-color;
     border-radius: 50%;
@@ -512,6 +513,7 @@ grid-column: 1;
     color: $highlight-color;
     margin-top: 5%;
     text-shadow: 2px 2px 6px #000;
+
 }
 
 /*MEDIA QUERIES*/
