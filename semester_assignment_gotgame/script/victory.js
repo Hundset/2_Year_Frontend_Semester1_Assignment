@@ -29,11 +29,16 @@ var winDiv = document.createElement('div');
 
 winDiv.setAttribute("class", "winner-div");
 
+var winWrapper = document.createElement('div');
+winWrapper.setAttribute('id', 'winner-wrapper');
+
 var winImage = document.createElement('img');
 winImage.setAttribute("id", "winner-image");
+winImage.setAttribute("class", "transform-image")
 
 var winName = document.createElement('p');
 winName.setAttribute("class", "winner-name");
+
 
 if (localStorage.length < 3) {
 
@@ -42,8 +47,9 @@ if (localStorage.length < 3) {
 } else {
 
     winName.innerHTML = winner + " wins!";
+    winWrapper.appendChild(winImage);
 
-    winDiv.appendChild(winImage);
+    winDiv.appendChild(winWrapper);
 
     winDiv.appendChild(winName);
 
@@ -95,7 +101,7 @@ if (localStorage.length < 3) {
 
 setTimeout( function() {
         
-    winImage.style.webkitTransform = "rotateY( 360deg)";
+    winImage.style.transform = "rotateY( 360deg)";
     winImage.style.transitionDuration = "1s";
 }, 300);
 

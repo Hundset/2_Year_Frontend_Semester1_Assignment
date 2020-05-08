@@ -36,7 +36,6 @@ var rollAlert = document.getElementById("roll-alert");
 
 var trapAlert = document.getElementById("trap-alert");
 
-
     if (localStorage.length < 2) {
 
         console.log("No players have been chosen");
@@ -56,8 +55,14 @@ var trapAlert = document.getElementById("trap-alert");
         position2.appendChild(token2);
         
         function rollDice() {
+            if (localStorage.length < 2) {
+                return;
+            }
 
             if(playerTurn === 1) {
+
+                selected1.style.color="white";
+                selected2.style.color="gold";
         
                 var roll = Math.floor( Math.random() * 6 ) +1;
         
@@ -251,6 +256,9 @@ var trapAlert = document.getElementById("trap-alert");
             else {
         
                 playerTurn = 1;
+
+                selected1.style.color="gold";
+                selected2.style.color="white";
         
                 var roll = Math.floor( Math.random() * 6 ) +1;
         

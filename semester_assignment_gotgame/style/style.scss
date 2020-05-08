@@ -1,7 +1,7 @@
 
 
-$primary-color: #1A425C;
-$secondary-color: #80181B;
+$primary-color: #0D598B;
+$secondary-color: #AD1418;
 $highlight-color: #FF8900;
 $font-color: white;
 $container-color: black;
@@ -95,7 +95,7 @@ h3, h5 {
 
     color: $highlight-color;
     text-align: center;
-    font-family: cinzel-decor-bold;
+    font-family: cinzel;
     margin: auto;
 
 }
@@ -173,6 +173,14 @@ p {
     color: $secondary-color
 }
 
+.game-page #selected-char1, .game-page #selected-char2 {
+    color: white;
+    width: 100%;
+    font-size: 0.7em;
+    padding-right: 13%;
+
+}
+
 /*CHARACTER SELECTION*/
 
 #characters {
@@ -238,8 +246,9 @@ p {
 }
 
 .score-span {
-
     color: $highlight-color;
+    font-size: 1.4em;
+    margin-top: 15%;
 
 }
 
@@ -271,7 +280,7 @@ p {
 }
 
 .tile {
-    background: lightgray;
+    
     position: relative;
     border: 1px solid black;
     display: flex;
@@ -287,6 +296,12 @@ p {
         height: 95%;
         width: 100;
         z-index: 0;
+    }
+
+    &--selections {
+
+        border: none;
+
     }
 }
 
@@ -318,7 +333,6 @@ p {
     float: left;
     color: white;
     
-
 }
 
 #token1 {
@@ -483,6 +497,17 @@ grid-row: 3;
 grid-column: 1;    
 }
 
+.tile:nth-child(31) {
+grid-row: 6;
+grid-column: 3;
+}
+
+.tile:nth-child(32) {
+grid-row: 6;
+grid-column: 6;
+}
+
+
 /*VICTORY PAGE*/
 
 .winner-div {
@@ -514,6 +539,13 @@ grid-column: 1;
     margin-top: 5%;
     text-shadow: 2px 2px 6px #000;
 
+}
+
+#winner-wrapper {
+
+    transform: translate(0, 0) rotateY(0deg);
+    -webkit-transform: translate(0, 0) rotateY(0deg);
+    animation-duration: 1s;
 }
 
 /*MEDIA QUERIES*/

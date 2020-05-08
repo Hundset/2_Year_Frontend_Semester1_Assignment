@@ -83,7 +83,7 @@ h1 {
 h3, h5 {
   color: #FF8900;
   text-align: center;
-  font-family: cinzel-decor-bold;
+  font-family: cinzel;
   margin: auto;
 }
 
@@ -127,13 +127,13 @@ nav a {
   margin-top: 10%;
   margin-left: 10%;
   margin-right: 10%;
-  background-color: #1A425C;
+  background-color: #0D598B;
   padding: 16px;
   border-radius: 25px;
 }
 
 .active {
-  background-color: #80181B;
+  background-color: #AD1418;
   text-decoration: underline;
 }
 
@@ -151,12 +151,19 @@ p {
   margin: auto;
   padding: 2%;
   text-align: center;
-  color: #1A425C;
+  color: #0D598B;
   font-family: cinzel-decor-bold;
 }
 
 #selected-char2 {
-  color: #80181B;
+  color: #AD1418;
+}
+
+.game-page #selected-char1, .game-page #selected-char2 {
+  color: white;
+  width: 100%;
+  font-size: 0.7em;
+  padding-right: 13%;
 }
 
 /*CHARACTER SELECTION*/
@@ -204,7 +211,7 @@ p {
 }
 
 .clicked {
-  background-color: #80181B;
+  background-color: #AD1418;
 }
 
 /*BOARD GAME*/
@@ -219,6 +226,8 @@ p {
 
 .score-span {
   color: #FF8900;
+  font-size: 1.4em;
+  margin-top: 15%;
 }
 
 #trap-alert {
@@ -250,7 +259,6 @@ p {
 }
 
 .tile {
-  background: lightgray;
   position: relative;
   border: 1px solid black;
   display: -webkit-box;
@@ -273,6 +281,10 @@ p {
   height: 95%;
   width: 100;
   z-index: 0;
+}
+
+.tile--selections {
+  border: none;
 }
 
 .marble {
@@ -306,13 +318,13 @@ p {
 #token1 {
   top: 0;
   left: 0;
-  background: #1A425C;
+  background: #0D598B;
 }
 
 #token2 {
   bottom: 0;
   right: 0;
-  background: #80181B;
+  background: #AD1418;
 }
 
 .tile:nth-child(1) {
@@ -525,6 +537,20 @@ p {
   grid-column: 1;
 }
 
+.tile:nth-child(31) {
+  -ms-grid-row: 6;
+  grid-row: 6;
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+.tile:nth-child(32) {
+  -ms-grid-row: 6;
+  grid-row: 6;
+  -ms-grid-column: 6;
+  grid-column: 6;
+}
+
 /*VICTORY PAGE*/
 .winner-div {
   width: 190px;
@@ -549,6 +575,13 @@ p {
   color: #FF8900;
   margin-top: 5%;
   text-shadow: 2px 2px 6px #000;
+}
+
+#winner-wrapper {
+  transform: translate(0, 0) rotateY(0deg);
+  -webkit-transform: translate(0, 0) rotateY(0deg);
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 /*MEDIA QUERIES*/
