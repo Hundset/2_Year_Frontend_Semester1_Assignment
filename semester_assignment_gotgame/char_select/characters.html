@@ -13,25 +13,23 @@
             <h1><span class="h1-initial">G</span>ame of <span class="h1-initial">T</span>hrones: The Online Board Game</h1>
         </header>
     <div class="controller-box">
-        <nav>
-            <a href="characters.html" class="active">PLAYER SELECTION</a>
-            <a href="../index.html">THE BOARD GAME</a>
-    </nav>
-
-    <h3>CHOOSE YOUR CHARACTERS</h3>
-
-    <p>Pick two characters: one for yourself and another as your opponent</p>
 
     <div class="selections">
         <div id="selected-char1"></div>
         <div id="selected-char2"></div>
     </div>
 
+    <button class="clear-button" onclick="clearChars()">CLEAR CHARACTERS</button>
+
+    <nav>
+        <a href="../index.html">CLICK TO PLAY</a>
+    </nav>
+
     </div>
 
-    <div id="characters">
+    <h3>CHOOSE TWO CHARACTERS</h3>
 
-    </div>
+    <div id="characters"></div>
     
     <script src="../script/character_selection.js"></script>
 </body>

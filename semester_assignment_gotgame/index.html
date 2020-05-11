@@ -22,11 +22,6 @@
 
     <p>The first to reach the finishing line wins - beware of traps; traps stall your progress. Rolling a 6 gives you another turn!</p>
 
-   <!--<div class="selections">
-        <div id="selected-char1"></div>
-        <div id="selected-char2"></div>
-    </div>-->
-
     <img src="media/dice-1.png" width="auto" height="auto" id="dice" onclick="rollDice()">
 
     <h5>click dice to roll</h5>
@@ -46,7 +41,7 @@
             <div id="board-tile-7" class="tile marble"></div>
             <div id="board-tile-8" class="tile darkmarble"></div>
             <div id="board-tile-9" class="tile marble"></div>
-            <div id="board-tile-10" class="tile darkmarble"><img class="tile--trap" src="media/thenn_icon-8.png" alt="icon of thenn wildling"></div>
+            <div id="board-tile-10" class="tile darkmarble"><img class="tile--trap__thenn" src="media/thenn_icon-8.png" alt="icon of thenn wildling"></div>
             <div id="board-tile-11" class="tile marble"></div>
             <div id="board-tile-12" class="tile darkmarble"></div>
             <div id="board-tile-13" class="tile marble"></div>
@@ -66,9 +61,11 @@
             <div id="board-tile-27" class="tile marble"></div>
             <div id="board-tile-28" class="tile darkmarble"></div>
             <div id="board-tile-29" class="tile marble"></div>
-            <div id="board-tile-30" class="tile darkmarble nightking"><img class="tile--trap" src="media/night_king2-8.png" alt="icon of night king"></div>
+            <div id="board-tile-30" class="tile darkmarble nightking"><img class="tile--trap__king" src="media/night_king2-8.png" alt="icon of night king"></div>
             <div id="selected-char1" class="tile tile--selections"></div>
             <div id="selected-char2" class="tile tile--selections"></div>
+            <div class="tile tile--player"><p>Player 1:</p></div>
+            <div class="tile tile--player"><p>Player 2:</p></div>
         </div>
         
         <script src="script/game.js"></script>

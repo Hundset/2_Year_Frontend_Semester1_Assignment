@@ -20,16 +20,16 @@ request.onreadystatechange = function() {
         
         var characters = [Jon, Tyrion, Dany, Arya, Jaime, Brienne, Hound, Worm, Melisa, Varys]
 
-        var jonImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Jon.png"
-        var tyrionImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Tyrion.png"
-        var aryaImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Arya.png"
-        var danyImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Dany.png"
-        var jaimieImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Jaime.png"
-        var brienneImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Brienne.png" 
-        var houndImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Hound.png"
-        var wormImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Worm.png"
-        var melisaImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Melisa.png"
-        var varysImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Varys.png"
+        var jonImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Jon.jpg"
+        var tyrionImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Tyrion.jpg"
+        var aryaImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Arya.jpg"
+        var danyImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Dany.jpg"
+        var jaimieImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Jaime.jpg"
+        var brienneImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Brienne.jpg" 
+        var houndImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Hound.jpg"
+        var wormImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Worm.jpg"
+        var melisaImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Melisa.jpg"
+        var varysImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Varys.jpg"
 
         function createChars() {
 
@@ -113,8 +113,20 @@ request.onreadystatechange = function() {
         document.getElementById("selected-char1").innerHTML = localStorage.getItem('player1');
         document.getElementById("selected-char2").innerHTML = localStorage.getItem('player2');
         
-    }  
+    }
 };
+
+function clearChars() {
+
+    localStorage.clear()
+    setTimeout(function() {location.reload();}, 250);
+
+}
 
 request.open('GET', 'https://raw.githubusercontent.com/joakimskoog/AnApiOfIceAndFire/master/data/characters.json');
 request.send();
+
+if (localStorage.length === 0) {
+    document.querySelector("a").style.display = "none";
+    document.querySelector(".clear-button").style.display = "none";
+}

@@ -1,10 +1,10 @@
 
 
-$primary-color: #0D598B;
+$primary-color: rgb(33, 117, 173);
 $secondary-color: #AD1418;
-$highlight-color: #FF8900;
+$highlight-color: #FFA72E;
 $font-color: white;
-$container-color: black;
+$container-color: rgba(000, 000, 000, 0.6);
 
 @import url('https://fonts.googleapis.com/css?family=Alegreya|Alice|Bad+Script|Cardo|Cormorant|EB+Garamond|Fondamento|Josefin+Slab|Merienda|Prata|Tangerine&display=swap');
 
@@ -63,7 +63,7 @@ body:after {
 header {
 
     height: 15%;
-    background-color: #272727;
+    background-color: $container-color;
     padding-top: .001em;
 }
 
@@ -95,12 +95,21 @@ h3, h5 {
 
     color: $highlight-color;
     text-align: center;
-    font-family: cinzel;
+    font-family: cinzel-bold;
     margin: auto;
 
 }
 
 h3 {
+
+    width: 40%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 2%;
+
+}
+
+.game-page h3 {
     border-top: 2px solid $highlight-color; 
     margin-top: 10%;
     margin-bottom: 10%;
@@ -116,7 +125,7 @@ h5 {
     float: left;
     display: block;
     width: 15%;
-    background-color: $container-color;
+    background-color: black;
     height: 100%;
     border-right: 2px solid $highlight-color;
     border-top: 2px solid $highlight-color;
@@ -150,14 +159,13 @@ nav a {
     text-decoration: underline;
 }
 
-
 p {
     width: 90%;
     margin: auto;
 }
 
 .selections {
-    margin-top: 2%;
+    margin-top: 10%;
 }
 
 #selected-char1, #selected-char2 {
@@ -177,11 +185,13 @@ p {
     color: white;
     width: 100%;
     font-size: 0.7em;
-    padding-right: 13%;
+    margin: 0%;
+    padding: 0%;
 
 }
 
 /*CHARACTER SELECTION*/
+
 
 #characters {
     width: 90%;
@@ -194,14 +204,12 @@ p {
     margin: 1%;
     margin-right: auto;
     background-color: $container-color;
-    height: 300px;
-    border: 2px solid $highlight-color;
+    height: 270px;
     border-radius: 16px;
 }
 
 .playercards img {
-    height: 220px;
-    width: 160px;
+    width: 156px;
     margin-top: 5%;
     margin-left: 5%;
     border-radius: 16px;
@@ -223,8 +231,15 @@ p {
 }
 
 .character-button:hover {
-    color: $highlight-color;
-    background-color: white;
+    text-decoration: underline;
+}
+
+.clear-button {
+    
+    @extend .character-button;
+    font-family: cinzel-bold;
+    width: 75%;
+    margin-top: 5%;
 }
 
 .clicked {
@@ -288,19 +303,43 @@ p {
     justify-content: center;
 
     &--trap {
-        height: 95%;
+        width: auto;
+        max-width: 75px;
         z-index: 0;
+    }
+
+    &--trap__thenn {
+
+        height: auto;
+        max-height: 80px;
+        z-index: 0;
+
+    }
+
+    &--trap__king {
+
+        height: auto;
+        max-height: 85px;
+        z-index: 0;
+
     }
 
     &--trap__bridge {
-        height: 95%;
-        width: 100;
+        width: auto;
+        max-width: 100px;
         z-index: 0;
     }
 
-    &--selections {
+    &--selections, &--player {
 
         border: none;
+
+    }
+
+    &--player p {
+
+        margin: auto;
+        margin-top: 40%;
 
     }
 }
@@ -317,6 +356,7 @@ p {
 }
 
 .nightking {
+    
     background: black;
 }
 
@@ -507,6 +547,16 @@ grid-row: 6;
 grid-column: 6;
 }
 
+.tile:nth-child(33) {
+grid-row: 5;
+grid-column: 3;
+}
+
+.tile:nth-child(34) {
+grid-row: 5;
+grid-column: 6;
+}
+
 
 /*VICTORY PAGE*/
 
@@ -565,10 +615,11 @@ grid-column: 6;
     }
 
     .selections {
-        margin-bottom: 2%;
+        margin-top: 1%;
+        margin-bottom: 1%;
     }
 
-    #selected-char1, #selected-char2 {
+    .character-selection-page #selected-char1, .character-selection-page #selected-char2 {
 
         padding: 0.5%;
     }
@@ -597,8 +648,16 @@ grid-column: 6;
         margin-bottom: 0%;
     }
 
+    .clear-button {
+        
+        width: 35%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+
+    }
+
     .character-selection-page nav a {
-        width: 30%;
+        width: 35%;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 2%;
@@ -611,6 +670,12 @@ grid-column: 6;
     .logo {
 
         width: 9%;
+
+    }
+
+    .character-selection-page h3 {
+
+        margin: auto;
 
     }
 
@@ -635,11 +700,28 @@ grid-column: 6;
     }
 
     .victory-page nav a {
-        width: 30%;
+        width: 35%;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 2%;
         margin-top: 2%;
+    }
+
+}
+
+@media only screen and (max-width: 812px) {
+
+    .logo {
+        margin-top: 1%;
+    }
+
+    h1 {
+        padding-top: 1%;
+        font-size: 1.2em;
+    }
+
+    header {
+        max-height: 16%;
     }
 
 }
@@ -663,6 +745,12 @@ grid-column: 6;
         margin: 5%;
     }
 
+    .character-selection-page h3 {
+
+        width: 60%;
+
+    }
+
 }
 
 @media only screen and (max-width: 580px) {
@@ -671,6 +759,10 @@ grid-column: 6;
 
         width: 18%;
 
+    }
+    
+    h1 {
+        font-size: 1em;
     }
 
     header {
@@ -681,7 +773,7 @@ grid-column: 6;
 
     nav a {
     
-        width: 35% !important;
+        width: 35%;
     }
 
     .playercards {
@@ -689,3 +781,22 @@ grid-column: 6;
     }
 
 }
+
+/*landscape*/
+
+@media only screen and (max-width: 823px) and (orientation: landscape) {
+
+    header {
+         min-height: 35%;
+    }
+ 
+ }
+
+ @media only screen and (max-width: 580px) and (orientation: landscape) {
+     
+
+    .logo {
+        width: 13%;
+    }
+
+ }

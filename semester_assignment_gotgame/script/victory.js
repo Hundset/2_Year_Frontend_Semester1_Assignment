@@ -10,16 +10,17 @@ var Worm = "Grey Worm";
 var Melisa = "Melisandre";
 var Varys = "Varys";
 
-var jonImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Jon.png";
-var tyrionImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Tyrion.png";
-var aryaImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Arya.png";
-var danyImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Dany.png";
-var jaimieImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Jaime.png";
-var brienneImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Brienne.png" ;
-var houndImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Hound.png";
-var wormImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Worm.png";
-var melisaImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Melisa.png";
-var varysImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Varys.png";
+var jonImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Jon.jpg";
+var tyrionImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Tyrion.jpg";
+var aryaImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Arya.jpg";
+var danyImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Dany.jpg";
+var jaimieImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Jaime.jpg";
+var brienneImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Brienne.jpg" ;
+var houndImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Hound.jpg";
+var wormImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Worm.jpg";
+var melisaImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Melisa.jpg";
+var varysImg = "http://www.hundsie.com/semester_assignment_gotgame/media/Varys.jpg";
+
 
 var winner = localStorage.getItem('winner');
 

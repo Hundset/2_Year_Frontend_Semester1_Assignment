@@ -60,9 +60,6 @@ var trapAlert = document.getElementById("trap-alert");
             }
 
             if(playerTurn === 1) {
-
-                selected1.style.color="white";
-                selected2.style.color="gold";
         
                 var roll = Math.floor( Math.random() * 6 ) +1;
         
@@ -197,7 +194,7 @@ var trapAlert = document.getElementById("trap-alert");
                         trapAlert.innerHTML = "You have lost control of one of your dragons! You are forced to retreat, escaping the creature's wrath (you go back 3 moves)";
         
                     }
-                    else if (player2 === Worm) {
+                    else if (player1 === Worm) {
         
                         trapAlert.innerHTML = "Daenerys has lost control of one of her dragons! You resolve to help her flee - escorting your liberator away from harm (you go back 3 moves)";
         
@@ -256,9 +253,6 @@ var trapAlert = document.getElementById("trap-alert");
             else {
         
                 playerTurn = 1;
-
-                selected1.style.color="gold";
-                selected2.style.color="white";
         
                 var roll = Math.floor( Math.random() * 6 ) +1;
         
